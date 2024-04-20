@@ -11,6 +11,8 @@ import { HeroComponent } from './components/hero/hero.component';
 import { NewsComponent } from './components/news/news.component';
 import { NextMatchComponent } from './components/next-match/next-match.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { AddMatchComponent } from './components/add-match/add-match.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,14 @@ import { BlogComponent } from './components/blog/blog.component';
     HeroComponent,
     NewsComponent,
     NextMatchComponent,
-    BlogComponent
+    BlogComponent,
+    AddMatchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
