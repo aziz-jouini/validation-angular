@@ -13,6 +13,8 @@ import { NextMatchComponent } from './components/next-match/next-match.component
 import { BlogComponent } from './components/blog/blog.component';
 import { AddMatchComponent } from './components/add-match/add-match.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NewsComponent,
     NextMatchComponent,
     BlogComponent,
-    AddMatchComponent
+    AddMatchComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
