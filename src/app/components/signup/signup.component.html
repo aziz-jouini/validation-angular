@@ -16,18 +16,62 @@
                 <form [formGroup]="signupForm">
                     <div class="form-group">
                         <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+                        <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched ) "
+                            class="text-danger">
+
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">
+                                first Name min len 3
+                            </div>
+
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['required']">
+                                first Name is Req *
+                            </div>
+
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+                        <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)" class="text-danger">
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['maxlength']">
+                                last Name is max len 5
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['required']">
+                                last Name is req*
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                        <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)" class="text-danger">
+                            <div *ngIf="signupForm.controls['email'].errors?.['email']">
+                                email is incorrect
+                            </div>
+                            <div *ngIf="signupForm.controls['email'].errors?.['required']">
+                                email is req*
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" formControlName="password" placeholder="Password">
+                        <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)" class="text-danger">
+                            <div *ngIf="signupForm.controls['password'].errors?.['minlength']">
+                                password is min lent 5
+                            </div>
+                            <div *ngIf="signupForm.controls['password'].errors?.['required']">
+                                password is req*
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" formControlName="confirmPwd" placeholder="Confirm Pwd">
+                        <div *ngIf="signupForm.controls['confirmPwd'].invalid && (signupForm.controls['confirmPwd'].dirty || signupForm.controls['confirmPwd'].touched ) " class="text-danger">
+
+                            <div *ngIf="signupForm.controls['confirmPwd'].errors?.['mustMatch']">
+                              confirmPwd 
+                            </div>
+            
+             
+                          </div>
                     </div>
 
                     <div class="form-group">
