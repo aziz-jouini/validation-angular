@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"contact", component:ContactComponent},
   {path:"add-match", component:AddMatchComponent},
+  {path:"add-match/:id", component:AddMatchComponent},
   {path:"signup", component:SignupComponent},
   {path:"login", component:LoginComponent},
   {path:"table-match", component:TableMatchComponent},
