@@ -15,6 +15,7 @@ import { AddMatchComponent } from './components/add-match/add-match.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { TableMatchComponent } from './components/table-match/table-match.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginComponent } from './components/login/login.component';
     BlogComponent,
     AddMatchComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    TableMatchComponent
   ],
   imports: [
     BrowserModule,

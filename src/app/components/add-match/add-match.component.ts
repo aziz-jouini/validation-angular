@@ -8,23 +8,34 @@ import { FormGroup } from '@angular/forms';
 })
 export class AddMatchComponent {
   addMatchForm !: FormGroup
-  match:any={
-  
-  }
+  match:any={}
   constructor () {
 
   }
   ngOnInit() {
+    this.match = JSON.parse(localStorage.getItem('match') ?? '{}');
+    
 
   }
   addMatch() {
-    let T =JSON.parse(localStorage.getItem("matches") || "[]")
-    let matcheId=JSON.parse(localStorage.getItem("matcheId") || "0")
-    this.match.id=matcheId
-    T.push(this.match)
-   localStorage.setItem("matches",JSON.stringify(T))
-   localStorage.setItem("matcheId",JSON.stringify(matcheId+1))
+    let matches = JSON.parse(localStorage.getItem("matches") || "[]");
+    let matchId = JSON.parse(localStorage.getItem("matcheId") || "0");
     
     
-  }
+    let matchIndex = matches.findIndex((match: any) => match.id === this.match.id);
+
+    if (matchIndex !== -1) {
+        // Mise a jour de donnee
+        matches[matchIndex] = this.match;
+    } else {
+        // si le match n'existe pas , creer un nouveau match 
+        this.match.id = matchId;
+        matches.push(this.match);
+        localStorage.setItem("matcheId", JSON.stringify(matchId + 1)); 
+    }
+
+    
+    localStorage.setItem("matches", JSON.stringify(matches));
+}
+
 }
