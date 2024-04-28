@@ -1,1 +1,46 @@
-<p>login works!</p>
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Login</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="loginForm">
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                        <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="text-danger">
+                            <div *ngIf="loginForm.controls['email'].errors?.['email']">
+                                email is incorrect
+                            </div>
+                            <div *ngIf="loginForm.controls['email'].errors?.['required']">
+                                email is req*
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="password" placeholder="Password">
+                        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="text-danger">
+                            <div *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                                password is min lent 5
+                            </div>
+                            <div *ngIf="loginForm.controls['password'].errors?.['required']">
+                                password is req*
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary py-3 px-5" (click)="login()">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
